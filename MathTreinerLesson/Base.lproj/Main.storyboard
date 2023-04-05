@@ -226,35 +226,39 @@
                         <outletCollection property="buttonsCollection" destination="A1v-0g-bvO" collectionClass="NSMutableArray" id="P59-nF-jrf"/>
                         <outletCollection property="buttonsCollection" destination="kfD-B3-jaA" collectionClass="NSMutableArray" id="kVR-BF-obQ"/>
                         <outletCollection property="buttonsCollection" destination="vFW-eG-708" collectionClass="NSMutableArray" id="CfA-82-U3h"/>
+                        <segue destination="VaK-aj-mWq" kind="show" identifier="goToNext" id="CgR-iA-ozj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13.043478260869566" y="43.526785714285715"/>
         </scene>
-        <!--View Controller-->
+        <!--Train View Controller-->
         <scene sceneID="cW8-Gk-Xks">
             <objects>
-                <viewController id="VaK-aj-mWq" sceneMemberID="viewController">
+                <viewController id="VaK-aj-mWq" customClass="TrainViewController" customModule="MathTreinerLesson" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MWc-MH-ihZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWT-w6-rTb">
-                                <rect key="frame" x="50" y="94" width="56" height="31"/>
+                                <rect key="frame" x="50" y="50" width="56" height="31"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="Bvy-lB-WzG" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="nQ6-9a-ZJh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34 + 53 = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiV-eG-rzt">
-                                <rect key="frame" x="108.5" y="394" width="197" height="48"/>
+                                <rect key="frame" x="108.5" y="367" width="197" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pti-FS-ob2">
-                                <rect key="frame" x="227" y="562" width="80" height="80"/>
+                                <rect key="frame" x="227" y="535" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="OmN-3R-pMB"/>
@@ -275,7 +279,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dS-yc-oeh">
-                                <rect key="frame" x="107" y="562" width="80" height="80"/>
+                                <rect key="frame" x="107" y="535" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="YJ7-bM-h80"/>
@@ -309,8 +313,10 @@
                             <constraint firstItem="aiV-eG-rzt" firstAttribute="centerY" secondItem="MWc-MH-ihZ" secondAttribute="centerY" constant="-30" id="q9U-KU-RYn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="YgD-Ff-t3z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEB-KB-Ufv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Bvy-lB-WzG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="828" y="44"/>
         </scene>
