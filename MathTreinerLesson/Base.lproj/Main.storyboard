@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -243,10 +242,19 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWT-w6-rTb">
                                 <rect key="frame" x="50" y="50" width="56" height="31"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Back"/>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Bvy-lB-WzG" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="nQ6-9a-ZJh"/>
                                 </connections>
@@ -314,6 +322,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YgD-Ff-t3z"/>
+                    <connections>
+                        <outletCollection property="buttonsCollection" destination="8dS-yc-oeh" collectionClass="NSMutableArray" id="OXi-kG-ska"/>
+                        <outletCollection property="buttonsCollection" destination="8dS-yc-oeh" collectionClass="NSMutableArray" id="cMk-bG-yEm"/>
+                        <outletCollection property="buttonsCollection" destination="pti-FS-ob2" collectionClass="NSMutableArray" id="7cl-W0-gZ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEB-KB-Ufv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Bvy-lB-WzG" userLabel="Exit" sceneMemberID="exit"/>
@@ -322,9 +335,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
