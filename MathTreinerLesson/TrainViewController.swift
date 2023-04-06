@@ -84,12 +84,13 @@ final class TrainViewController : UIViewController {
             
         }
         
-        let isRightButton = Bool.random()
+        
         var randomAnswer: Int
         repeat {
-            randomAnswer =  Int.random(in: (answer - 10)...(answer + 10))
+            randomAnswer =  Int.random(in: (answer < 10 ? 0: answer - 10)...(answer + 10))
         } while randomAnswer == answer
         
+        let isRightButton = Bool.random()
                                       
         leftButton.setTitle(isRightButton ? String(randomAnswer): String(answer), for: .normal)
         rightButton.setTitle(isRightButton ? String(answer): String(randomAnswer), for: .normal)
@@ -97,7 +98,7 @@ final class TrainViewController : UIViewController {
     
     private func configureQuestion () {
         firstNumber = Int.random(in: 1...99)
-        secondNumber = Int.random(in: 1...99)
+        secondNumber = type == .divide ? finderOfDivisor(number: firstNumber) : Int.random(in: 1...99)
         
         let question: String = "\(firstNumber) \(sign) \(secondNumber) = "
         questionLabel.text = question
@@ -110,17 +111,24 @@ final class TrainViewController : UIViewController {
         
         if isRightAnswer {
             let isSecondAttempt = rightButton.backgroundColor == .red || leftButton.backgroundColor == .red
-        
+            
             count += isSecondAttempt ? 0 : 1
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.configureQuestion()
                 self?.configButtons()
             }
-
         }
         
     }
-    
-    
+    private func finderOfDivisor (number: Int) -> Int {
+        var arr: [Int] = []
+        for i in 2...number/2 {
+            if number % i == 0 {
+                arr.append(i)
+            }
+        }
+        arr.append(number)
+        return arr.randomElement()!
+    }
 }
