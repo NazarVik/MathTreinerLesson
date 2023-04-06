@@ -308,13 +308,21 @@
                                     <action selector="leftAction:" destination="VaK-aj-mWq" eventType="touchUpInside" id="hDN-NU-ccu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLb-a2-AC1">
+                                <rect key="frame" x="303" y="103.5" width="61" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rr0-Ct-d21"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LLb-a2-AC1" firstAttribute="centerY" secondItem="DWT-w6-rTb" secondAttribute="centerY" id="8Ly-xE-nu8"/>
                             <constraint firstItem="pti-FS-ob2" firstAttribute="centerX" secondItem="MWc-MH-ihZ" secondAttribute="centerX" constant="60" id="RF9-EK-npo"/>
                             <constraint firstItem="aiV-eG-rzt" firstAttribute="centerX" secondItem="MWc-MH-ihZ" secondAttribute="centerX" id="WAi-y3-S5Q"/>
                             <constraint firstItem="DWT-w6-rTb" firstAttribute="top" secondItem="Rr0-Ct-d21" secondAttribute="top" constant="50" id="gSi-8m-ffu"/>
+                            <constraint firstItem="Rr0-Ct-d21" firstAttribute="trailing" secondItem="LLb-a2-AC1" secondAttribute="trailing" constant="50" id="mEq-NY-v3W"/>
                             <constraint firstItem="8dS-yc-oeh" firstAttribute="centerX" secondItem="MWc-MH-ihZ" secondAttribute="centerX" constant="-60" id="mVX-PR-pEg"/>
                             <constraint firstItem="DWT-w6-rTb" firstAttribute="leading" secondItem="Rr0-Ct-d21" secondAttribute="leading" constant="50" id="mlr-cl-gCD"/>
                             <constraint firstItem="pti-FS-ob2" firstAttribute="centerY" secondItem="8dS-yc-oeh" secondAttribute="centerY" id="nRn-gr-cD9"/>
@@ -327,6 +335,7 @@
                         <outlet property="leftButton" destination="8dS-yc-oeh" id="WrB-VF-W6h"/>
                         <outlet property="questionLabel" destination="aiV-eG-rzt" id="Qf3-4o-JzR"/>
                         <outlet property="rightButton" destination="pti-FS-ob2" id="GsV-N4-gYh"/>
+                        <outlet property="scoresLabel" destination="LLb-a2-AC1" id="vsO-qd-XeH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEB-KB-Ufv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

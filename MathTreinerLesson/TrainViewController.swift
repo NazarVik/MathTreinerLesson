@@ -13,6 +13,7 @@ final class TrainViewController : UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var scoresLabel: UILabel!
     
     // MARK: - Properties
     private var firstNumber = 0
@@ -21,6 +22,7 @@ final class TrainViewController : UIViewController {
     private var count: Int = 0 {
         didSet {
             print("Count :\(count)")
+            scoresLabel.text = "Scores: \(count)"
         }
     }
     
