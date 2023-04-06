@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     private var selectedType: MathTypes = .add
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
     @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
         
     }
+    
     // MARK: - Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? TrainViewController {

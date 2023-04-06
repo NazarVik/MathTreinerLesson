@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -237,11 +238,11 @@
             <objects>
                 <viewController id="VaK-aj-mWq" customClass="TrainViewController" customModule="MathTreinerLesson" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MWc-MH-ihZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWT-w6-rTb">
-                                <rect key="frame" x="50" y="50" width="56" height="31"/>
+                                <rect key="frame" x="50" y="98" width="62" height="34.5"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
@@ -260,13 +261,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34 + 53 = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiV-eG-rzt">
-                                <rect key="frame" x="108.5" y="367" width="197" height="48"/>
+                                <rect key="frame" x="108.5" y="365" width="197" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pti-FS-ob2">
-                                <rect key="frame" x="227" y="535" width="80" height="80"/>
+                                <rect key="frame" x="227" y="533" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="OmN-3R-pMB"/>
@@ -283,11 +284,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPo-0f-m4N"/>
+                                    <action selector="rightAction:" destination="VaK-aj-mWq" eventType="touchUpInside" id="7dp-po-ZzS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dS-yc-oeh">
-                                <rect key="frame" x="107" y="535" width="80" height="80"/>
+                                <rect key="frame" x="107" y="533" width="80" height="80"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="YJ7-bM-h80"/>
@@ -304,7 +305,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gwg-rh-hiW"/>
+                                    <action selector="leftAction:" destination="VaK-aj-mWq" eventType="touchUpInside" id="hDN-NU-ccu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -323,9 +324,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="YgD-Ff-t3z"/>
                     <connections>
-                        <outletCollection property="buttonsCollection" destination="8dS-yc-oeh" collectionClass="NSMutableArray" id="OXi-kG-ska"/>
-                        <outletCollection property="buttonsCollection" destination="8dS-yc-oeh" collectionClass="NSMutableArray" id="cMk-bG-yEm"/>
-                        <outletCollection property="buttonsCollection" destination="pti-FS-ob2" collectionClass="NSMutableArray" id="7cl-W0-gZ9"/>
+                        <outlet property="leftButton" destination="8dS-yc-oeh" id="WrB-VF-W6h"/>
+                        <outlet property="questionLabel" destination="aiV-eG-rzt" id="Qf3-4o-JzR"/>
+                        <outlet property="rightButton" destination="pti-FS-ob2" id="GsV-N4-gYh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEB-KB-Ufv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -336,7 +337,7 @@
     </scenes>
     <resources>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
