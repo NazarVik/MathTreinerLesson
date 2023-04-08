@@ -103,9 +103,14 @@ final class TrainViewController : UIViewController {
         if isRightAnswer {
             let isSecondAttempt = rightButton.backgroundColor == .red || leftButton.backgroundColor == .red
             count += isSecondAttempt ? 0 : 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            leftButton.isUserInteractionEnabled = false
+            rightButton.isUserInteractionEnabled = false
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                 self?.configureQuestion()
                 self?.configButtons()
+                self?.leftButton.isUserInteractionEnabled = true
+                self?.rightButton.isUserInteractionEnabled = true
             }
         }
     }
