@@ -8,8 +8,6 @@
 import UIKit
 
 final class TrainViewController : UIViewController {
-    
-    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
@@ -25,7 +23,7 @@ final class TrainViewController : UIViewController {
             scoresLabel.text = "Scores: \(count)"
         }
     }
-    
+
     var type: MathTypes = .add {
         didSet {
             switch type {
@@ -50,17 +48,14 @@ final class TrainViewController : UIViewController {
         }
     }
     
-   
     // Mark: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureQuestion()
         configButtons()
-        
     }
     
     //Mark: - Actions
-    
     @IBAction func leftAction(_ sender: UIButton) {
         check(answer: sender.titleLabel?.text ?? "", for: sender)
     }
@@ -70,7 +65,6 @@ final class TrainViewController : UIViewController {
     }
     
     // Mark: - methods
-    
     private func configButtons(){
         let buttonsArray = [leftButton, rightButton]
         
@@ -78,18 +72,16 @@ final class TrainViewController : UIViewController {
             button?.backgroundColor = .systemYellow
         }
         
-        buttonsArray.forEach{button in
+        buttonsArray.forEach { button in
             button?.layer.shadowColor = UIColor.darkGray.cgColor
             button?.layer.shadowOffset = CGSize(width: 0, height: 3)
             button?.layer.shadowOpacity = 0.5
             button?.layer.shadowRadius = 4
-            
         }
-        
         
         var randomAnswer: Int
         repeat {
-            randomAnswer =  Int.random(in: (answer < 10 ? 0: answer - 10)...(answer + 10))
+            randomAnswer =  abs(Int.random(in: (answer - 10)...(answer + 10)))
         } while randomAnswer == answer
         
         let isRightButton = Bool.random()
@@ -101,36 +93,29 @@ final class TrainViewController : UIViewController {
     private func configureQuestion () {
         firstNumber = Int.random(in: 1...99)
         secondNumber = type == .divide ? finderOfDivisor(number: firstNumber) : Int.random(in: 1...99)
-        
-        let question: String = "\(firstNumber) \(sign) \(secondNumber) = "
-        questionLabel.text = question
+        questionLabel.text = "\(firstNumber) \(sign) \(secondNumber) = "
     }
     
     private func check(answer: String, for button: UIButton) {
         let isRightAnswer = Int(answer) == self.answer
-        
         button.backgroundColor = isRightAnswer ? .green : .red
         
         if isRightAnswer {
             let isSecondAttempt = rightButton.backgroundColor == .red || leftButton.backgroundColor == .red
-            
             count += isSecondAttempt ? 0 : 1
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.configureQuestion()
                 self?.configButtons()
             }
         }
-        
     }
     private func finderOfDivisor (number: Int) -> Int {
         var arr: [Int] = []
-        for i in 2...number/2 {
-            if number % i == 0 {
+        for i in 1...number {
+            if number % i == 0, i != 1 {
                 arr.append(i)
             }
         }
-        arr.append(number)
-        return arr.randomElement()!
+        return arr.randomElement() ?? number
     }
 }
