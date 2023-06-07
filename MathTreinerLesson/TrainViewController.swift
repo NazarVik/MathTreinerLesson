@@ -21,6 +21,8 @@ final class TrainViewController : UIViewController {
         didSet {
             print("Count :\(count)")
             scoresLabel.text = "Scores: \(count)"
+            //сохраняем
+            UserDefaults.standard.set(count, forKey: type.key)
         }
     }
 
@@ -29,7 +31,7 @@ final class TrainViewController : UIViewController {
             switch type {
             case .add: sign = "+"
             case .subtract: sign = "-"
-            case .multyply: sign = "*"
+            case .multiply: sign = "*"
             case .divide: sign = "/"
             }
         }
@@ -41,7 +43,7 @@ final class TrainViewController : UIViewController {
             return firstNumber + secondNumber
         case .subtract:
             return firstNumber - secondNumber
-        case .multyply:
+        case .multiply:
             return firstNumber * secondNumber
         case .divide:
             return firstNumber / secondNumber
@@ -53,6 +55,10 @@ final class TrainViewController : UIViewController {
         super.viewDidLoad()
         configureQuestion()
         configButtons()
+        
+        if let count = UserDefaults.standard.object(forKey: type.key) as? Int {
+            self.count = count
+        }
     }
     
     //Mark: - Actions
@@ -124,3 +130,8 @@ final class TrainViewController : UIViewController {
         return arr.randomElement() ?? number
     }
 }
+
+//как можно создать свое собственное хранилище
+//extension UserDefault {
+//    static let container = UserDefaults(suiteName: "container")
+//}

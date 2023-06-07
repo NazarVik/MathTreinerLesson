@@ -42,7 +42,7 @@
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Az0-Sx-21h"/>
-                                            <constraint firstAttribute="width" constant="80" id="Y5H-jN-xfO"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Y5H-jN-xfO"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -84,7 +84,7 @@
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="AyO-0n-mNT"/>
-                                            <constraint firstAttribute="width" constant="80" id="yAd-5T-NH7"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="yAd-5T-NH7"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -126,7 +126,7 @@
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="8fJ-oy-5tg"/>
-                                            <constraint firstAttribute="width" constant="80" id="PBK-3B-Vax"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="PBK-3B-Vax"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -167,7 +167,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="182-VG-Ezn"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="182-VG-Ezn"/>
                                             <constraint firstAttribute="height" constant="80" id="zxv-dB-fos"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -202,6 +202,16 @@
                                     <constraint firstAttribute="trailing" secondItem="kfD-B3-jaA" secondAttribute="trailing" id="xbU-dE-Atz"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hN-bc-hVr">
+                                <rect key="frame" x="169" y="752" width="76.5" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="CLEAR"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4E1-cr-OkS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -209,10 +219,12 @@
                             <constraint firstItem="zUY-HF-F96" firstAttribute="centerY" secondItem="7gq-c2-VWe" secondAttribute="centerY" id="2k0-fg-d9q"/>
                             <constraint firstItem="dzi-qk-5bH" firstAttribute="centerX" secondItem="7gq-c2-VWe" secondAttribute="centerX" id="FvJ-tp-p7P"/>
                             <constraint firstItem="4Uu-he-j1m" firstAttribute="centerY" secondItem="dzi-qk-5bH" secondAttribute="centerY" id="HCF-pi-hvp"/>
+                            <constraint firstItem="6hN-bc-hVr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HE1-pq-Coe"/>
                             <constraint firstItem="zUY-HF-F96" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="HUg-45-03p"/>
                             <constraint firstItem="dzi-qk-5bH" firstAttribute="top" secondItem="7gq-c2-VWe" secondAttribute="bottom" constant="20" id="QUD-k4-Xn2"/>
                             <constraint firstItem="7gq-c2-VWe" firstAttribute="top" secondItem="IxJ-Bb-XvX" secondAttribute="bottom" constant="40" id="VHc-jD-6BZ"/>
                             <constraint firstItem="IxJ-Bb-XvX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d0w-cc-0sM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6hN-bc-hVr" secondAttribute="bottom" constant="75" id="fDS-lE-wI9"/>
                             <constraint firstItem="7gq-c2-VWe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fHq-8M-dYn"/>
                             <constraint firstItem="g36-TU-mIF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="spl-S6-Aw3"/>
                             <constraint firstItem="4Uu-he-j1m" firstAttribute="centerX" secondItem="zUY-HF-F96" secondAttribute="centerX" id="wQm-Cd-1NQ"/>
@@ -221,6 +233,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addCountLabel" destination="AaJ-OS-qjh" id="tTL-Hg-QfL"/>
+                        <outlet property="clearButton" destination="6hN-bc-hVr" id="60w-a7-U2D"/>
+                        <outlet property="divideCountLabel" destination="KNw-yk-Uz4" id="J0V-kh-ojb"/>
+                        <outlet property="multiplyCountLabel" destination="6Yn-vu-sDa" id="Yqc-YS-tGe"/>
+                        <outlet property="subtractCountLabel" destination="14M-BH-fsU" id="Mkh-tS-RJ7"/>
                         <outletCollection property="buttonsCollection" destination="G6L-Pv-LQx" collectionClass="NSMutableArray" id="iHr-FZ-hVe"/>
                         <outletCollection property="buttonsCollection" destination="G6L-Pv-LQx" collectionClass="NSMutableArray" id="c6p-kV-bo5"/>
                         <outletCollection property="buttonsCollection" destination="A1v-0g-bvO" collectionClass="NSMutableArray" id="P59-nF-jrf"/>
