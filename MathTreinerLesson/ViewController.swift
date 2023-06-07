@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var divideCountLabel: UILabel!
     
     @IBOutlet weak var clearButton: UIButton!
+    
     // MARK: - Properties
     private var selectedType: MathTypes = .add
     

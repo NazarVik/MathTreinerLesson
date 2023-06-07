@@ -130,3 +130,8 @@ final class TrainViewController : UIViewController {
         return arr.randomElement() ?? number
     }
 }
+
+//как можно создать свое собственное хранилище
+//extension UserDefault {
+//    static let container = UserDefaults(suiteName: "container")
+//}

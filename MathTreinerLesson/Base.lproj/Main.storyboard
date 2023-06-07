@@ -42,7 +42,7 @@
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Az0-Sx-21h"/>
-                                            <constraint firstAttribute="width" constant="80" id="Y5H-jN-xfO"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Y5H-jN-xfO"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -84,7 +84,7 @@
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="AyO-0n-mNT"/>
-                                            <constraint firstAttribute="width" constant="80" id="yAd-5T-NH7"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="yAd-5T-NH7"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -126,7 +126,7 @@
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="8fJ-oy-5tg"/>
-                                            <constraint firstAttribute="width" constant="80" id="PBK-3B-Vax"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="PBK-3B-Vax"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
@@ -167,7 +167,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="182-VG-Ezn"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="182-VG-Ezn"/>
                                             <constraint firstAttribute="height" constant="80" id="zxv-dB-fos"/>
                                         </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
@@ -203,9 +203,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hN-bc-hVr">
-                                <rect key="frame" x="170" y="752" width="75" height="35"/>
+                                <rect key="frame" x="169" y="752" width="76.5" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="CLEAR"/>
                                 <connections>
                                     <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4E1-cr-OkS"/>
                                 </connections>
